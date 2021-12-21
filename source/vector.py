@@ -208,13 +208,9 @@ def dot(p:vector, q:vector) -> float:
 def cross(p:vector, q:vector) -> vector:
     """
     A cross product multiplication for vectors in :math:`\\mathbb{R}^3`
+    
     .. math::
-        \\begin{aligned}
-        \\vec{p} \\times \\vec{q} &={\\begin{vmatrix}_{2}&_{3}\\q_{2}&q_{3}\\end{vmatrix}}\\mathbf {i} -
-                                    {\\begin{vmatrix}_{1}&_{3}\\q_{1}&q_{3}\\end{vmatrix}}\\mathbf {j} +
-                                    {\\begin{vmatrix}_{1}&_{2}\\q_{1}&q_{2}\\end{vmatrix}}\\mathbf {k} \\
-                                &= (_{2}q_{3}-_{3}q_{2})\\mathbf {i} -(_{1}q_{3}-_{3}q_{1})\\mathbf {j} +(_{1}q_{2}-_{2}q_{1})\\mathbf {k}
-        \\end{aligned}
+        \\vec{p} \\times \\vec{q}
 
     Args:
         p (vector): represents coordinates of vector p

@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vector module &#8212; Vectory 0.0.1 documentation</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/blank.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="index.html">
+<p class="title">Vectory</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="module-vector">
+<span id="vector-module"></span><h1>vector module<a class="headerlink" href="#module-vector" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="vector.cross">
+<span class="sig-prename descclassname"><span class="pre">vector.</span></span><span class="sig-name descname"><span class="pre">cross</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></span><a class="reference internal" href="_modules/vector.html#cross"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vector.cross" title="Permalink to this definition">¶</a></dt>
+<dd><p>A cross product multiplication for vectors in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span></p>
+<div class="math notranslate nohighlight">
+\[\vec{p} \times \vec{q}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="#vector.vector" title="vector.vector"><em>vector</em></a>) – represents coordinates of vector p</p></li>
+<li><p><strong>q</strong> (<a class="reference internal" href="#vector.vector" title="vector.vector"><em>vector</em></a>) – represents coordinates oF vector q</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – [description]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>[description]</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#vector.vector" title="vector.vector">vector</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vector.dist">
+<span class="sig-prename descclassname"><span class="pre">vector.</span></span><span class="sig-name descname"><span class="pre">dist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></span><a class="reference internal" href="_modules/vector.html#dist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vector.dist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="#vector.vector" title="vector.vector"><em>vector</em></a>) – represents coordinates of p vector</p></li>
+<li><p><strong>q</strong> (<a class="reference internal" href="#vector.vector" title="vector.vector"><em>vector</em></a>) – represents coordinates of q vector</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>TypeError</strong> – when either p or q are not of type vector</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>returns the distance of p to q</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#vector.vector" title="vector.vector">vector</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vector.dot">
+<span class="sig-prename descclassname"><span class="pre">vector.</span></span><span class="sig-name descname"><span class="pre">dot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/vector.html#dot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vector.dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>dot product operation of two vectors</p>
+<div class="math notranslate nohighlight">
+\[\vec{p} \cdot \vec{q} = \sum_{i=1}^n p_i q_i\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="#vector.vector" title="vector.vector"><em>vector</em></a>) – represents the coordinates of vector p</p></li>
+<li><p><strong>q</strong> (<a class="reference internal" href="#vector.vector" title="vector.vector"><em>vector</em></a>) – represents the coordinates of vector q</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – when p and q are not the same in lenght</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dot product of vector p and q</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vector.get_angle">
+<span class="sig-prename descclassname"><span class="pre">vector.</span></span><span class="sig-name descname"><span class="pre">get_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/vector.html#get_angle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vector.get_angle" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>..math::</dt><dd><p>theta = acos left( frac{vec{p} cdot vec{q}}{|| vec{p} || || vec{q} ||}right)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="#vector.vector" title="vector.vector"><em>vector</em></a>) – represents coordinates of vector p</p></li>
+<li><p><strong>q</strong> (<a class="reference internal" href="#vector.vector" title="vector.vector"><em>vector</em></a>) – represents coordinates of vector q</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>angle between p and q</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vector.get_projection">
+<span class="sig-prename descclassname"><span class="pre">vector.</span></span><span class="sig-name descname"><span class="pre">get_projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></span><a class="reference internal" href="_modules/vector.html#get_projection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vector.get_projection" title="Permalink to this definition">¶</a></dt>
+<dd><div class="math notranslate nohighlight">
+\[\text{projection}_{\vec{p}} \vec{q} = \frac{(\vec{p} \cdot \vec{q})}{|| \vec{p} ||^2} \vec{p}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="#vector.vector" title="vector.vector"><em>vector</em></a>) – represents coordinates of p vector</p></li>
+<li><p><strong>q</strong> (<a class="reference internal" href="#vector.vector" title="vector.vector"><em>vector</em></a>) – represents coordinates of q vector</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>coordinates of the projection of p to q</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#vector.vector" title="vector.vector">vector</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vector.norm">
+<span class="sig-prename descclassname"><span class="pre">vector.</span></span><span class="sig-name descname"><span class="pre">norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/vector.html#norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vector.norm" title="Permalink to this definition">¶</a></dt>
+<dd><div class="math notranslate nohighlight">
+\[||\vec{x}|| := \sqrt{x^2_1 + ... + x^2_n}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="#vector.vector" title="vector.vector"><em>vector</em></a>) – represents the coordinates of a vector</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>TypeError</strong> – when x is not of type vector</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>norm of a vector <span class="math notranslate nohighlight">\(||\vec{x}||\)</span></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vector.normalize">
+<span class="sig-prename descclassname"><span class="pre">vector.</span></span><span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></span><a class="reference internal" href="_modules/vector.html#normalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vector.normalize" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="#vector.vector" title="vector.vector"><em>vector</em></a>) – repreesents the coordinates of a vector</p></li>
+<li><p><strong>q</strong> (<a class="reference internal" href="#vector.vector" title="vector.vector"><em>vector</em></a>) – represents the coordinates of a vector</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>TypeError</strong> – when p and q are not of type vector</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>coordinates of normalized vector</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#vector.vector" title="vector.vector">vector</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vector.vector">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vector.</span></span><span class="sig-name descname"><span class="pre">vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vector.html#vector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vector.vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Representation of real-valued vector <span class="math notranslate nohighlight">\(\vec{v} \in \mathbb{R}^n\)</span></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vector.vector.contents">
+<span class="sig-name descname"><span class="pre">contents</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">numbers.Real</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#vector.vector.contents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vector.vectorize">
+<span class="sig-prename descclassname"><span class="pre">vector.</span></span><span class="sig-name descname"><span class="pre">vectorize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></span><a class="reference internal" href="_modules/vector.html#vectorize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vector.vectorize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, ddamiana.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
