@@ -149,15 +149,23 @@
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>NotImplementedError</strong> – [description]</p>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – when the dimensionality is not in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span></p>
 </dd>
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>[description]</p>
+<dd class="field-odd"><p>cross product of vectors in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span></p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><a class="reference internal" href="#vector.vector" title="vector.vector">vector</a></p>
 </dd>
 </dl>
+<p>… code-block:: python</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">vector</span> <span class="k">as</span> <span class="nn">v</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ab</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">vector</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bc</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">vector</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">ab</span><span class="p">,</span><span class="n">ac</span><span class="p">)</span>
+<span class="go">[-8,8,4]</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -180,6 +188,13 @@
 <dd class="field-even"><p><a class="reference internal" href="#vector.vector" title="vector.vector">vector</a></p>
 </dd>
 </dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">vector</span> <span class="kn">as</span> <span class="nn">v</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">vector</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">vector</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">dist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="go">[-3,-3,-3]</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -205,15 +220,20 @@
 <dd class="field-even"><p>float</p>
 </dd>
 </dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">vector</span> <span class="kn">as</span> <span class="nn">v</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">vector</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">vector</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="go">12</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="vector.get_angle">
 <span class="sig-prename descclassname"><span class="pre">vector.</span></span><span class="sig-name descname"><span class="pre">get_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/vector.html#get_angle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vector.get_angle" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>..math::</dt><dd><p>theta = acos left( frac{vec{p} cdot vec{q}}{|| vec{p} || || vec{q} ||}right)</p>
-</dd>
-</dl>
+<dd><div class="math notranslate nohighlight">
+\[\theta = \arccos \left( \frac{\vec{p} \cdot \vec{q}}{|| \vec{p} || || \vec{q} ||}\right)\]</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -228,6 +248,13 @@
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">vector</span> <span class="kn">as</span> <span class="nn">v</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">vector</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">vector</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">get_angle</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="go">1.5707963267948966 # which is equal to π/2</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -249,6 +276,13 @@
 <dd class="field-odd"><p><a class="reference internal" href="#vector.vector" title="vector.vector">vector</a></p>
 </dd>
 </dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">vector</span> <span class="kn">as</span> <span class="nn">v</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">vector</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">vector</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">get_projection</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+<span class="go">[-2.0, 1.0, 2.0]</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -270,6 +304,12 @@
 <dd class="field-even"><p>float</p>
 </dd>
 </dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">vector</span> <span class="kn">as</span> <span class="nn">v</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">vector</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">3.0</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -292,13 +332,80 @@
 <dd class="field-even"><p><a class="reference internal" href="#vector.vector" title="vector.vector">vector</a></p>
 </dd>
 </dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">vector</span> <span class="kn">as</span> <span class="nn">v</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">vector</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">vector</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">)</span>
+<span class="go">[-0.19611613513818404, 0.5883484054145521, -0.7844645405527362]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vector.parameterize">
+<span class="sig-prename descclassname"><span class="pre">vector.</span></span><span class="sig-name descname"><span class="pre">parameterize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">functions</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numbers.Real</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></span><a class="reference internal" href="_modules/vector.html#parameterize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vector.parameterize" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameterized vector which maps a single-valued argument into a list of functions</p>
+<div class="math notranslate nohighlight">
+\[\vec{f}(x) = \langle f_1(x), ... f_n(x) \rangle\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>functions</strong> (<em>List</em><em>[</em><em>Callable</em><em>]</em>) – represents a list of mathematical functions that return a value</p></li>
+<li><p><strong>arg</strong> (<em>Real</em>) – represents the single-valued argument</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>coordinates of a vector after evaluating the list of functions <span class="math notranslate nohighlight">\(\vec{f}(x)\)</span>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#vector.vector" title="vector.vector">vector</a></p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">vector</span> <span class="kn">as</span> <span class="nn">v</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">functions</span> <span class="o">=</span> <span class="p">[</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">pi</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">pi</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">parameterize</span><span class="p">(</span><span class="n">functions</span><span class="p">,</span> <span class="n">pi</span><span class="p">)</span>
+<span class="go">[-1.0, -0.4303012170000917, 9.869604401089358]</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="vector.vector">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">vector.</span></span><span class="sig-name descname"><span class="pre">vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vector.html#vector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vector.vector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Representation of real-valued vector <span class="math notranslate nohighlight">\(\vec{v} \in \mathbb{R}^n\)</span></p>
+<p>Representation of real-valued vector <span class="math notranslate nohighlight">\(\vec{v} \in \mathbb{R}^n\)</span>.
+The vector type is an iterable object.</p>
+<p>Supported Operations:</p>
+<ul class="simple">
+<li><p>element-wise vector addition</p></li>
+<li><p>element-wise vector subtraction</p></li>
+<li><p>element-wise vector multiplication</p></li>
+<li><p>element-wise vector division</p></li>
+<li><p>scalar-vector multiplication</p></li>
+<li><p>scalar-vector division</p></li>
+<li><p>vector-scalar exponentiation</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">vector</span> <span class="kn">as</span> <span class="nn">v</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">vector</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">vector</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">+</span><span class="n">b</span>
+<span class="go">[5, 7, 9]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">-</span><span class="n">b</span>
+<span class="go">[-3, -3, -3]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">*</span><span class="n">b</span>
+<span class="go">[4, 10, 18]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">/</span><span class="n">b</span>
+<span class="go">[0.25, 0.4, 0.5]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">*</span><span class="n">c</span>
+<span class="go">[5, 10, 15]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">/</span><span class="n">c</span>
+<span class="go">[0.2, 0.4, 0.6]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">**</span><span class="n">c</span>
+<span class="go">[1, 32, 243]</span>
+</pre></div>
+</div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="vector.vector.contents">
 <span class="sig-name descname"><span class="pre">contents</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">numbers.Real</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#vector.vector.contents" title="Permalink to this definition">¶</a></dt>
@@ -308,8 +415,36 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="vector.vectorize">
-<span class="sig-prename descclassname"><span class="pre">vector.</span></span><span class="sig-name descname"><span class="pre">vectorize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></span><a class="reference internal" href="_modules/vector.html#vectorize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vector.vectorize" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">vector.</span></span><span class="sig-name descname"><span class="pre">vectorize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#vector.vector" title="vector.vector"><span class="pre">vector.vector</span></a></span></span><a class="reference internal" href="_modules/vector.html#vectorize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vector.vectorize" title="Permalink to this definition">¶</a></dt>
+<dd><p>maps the values of a list of vector into a mathematical function</p>
+<div class="math notranslate nohighlight">
+\[f: \langle \vec{x_1}, ..., \vec{x_n} \rangle \mapsto \langle y_1, ... y_n \rangle\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> (<em>Callable</em>) – a mathematical function that returns a value</p></li>
+<li><p><strong>args</strong> (<em>List</em><em>[</em><a class="reference internal" href="#vector.vector" title="vector.vector"><em>vector</em></a><em>]</em>) – list of vectors that are mapped as arguments</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – when the function expects a number of arguments not equal to the number of vectors</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>evaluation of <span class="math notranslate nohighlight">\(f(\vec{x_1}, ..., \vec{x_n})\)</span></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#vector.vector" title="vector.vector">vector</a></p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">vector</span> <span class="kn">as</span> <span class="nn">v</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">vector</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">vector</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">vector</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span>  <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">z</span><span class="p">,</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">])</span>
+<span class="go">[12,15,18]</span>
+</pre></div>
+</div>
+</dd></dl>
 
 </div>
 

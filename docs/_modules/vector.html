@@ -120,13 +120,46 @@
                 
   <h1>Source code for vector</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">annotations</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Callable</span>
 <span class="kn">from</span> <span class="nn">numbers</span> <span class="k">import</span> <span class="n">Real</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">acos</span>
 
 <div class="viewcode-block" id="vector"><a class="viewcode-back" href="../vector.html#vector.vector">[docs]</a><span class="k">class</span> <span class="nc">vector</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Representation of real-valued vector :math:`\\vec{v} \\in \\mathbb{R}^n`</span>
+<span class="sd">    Representation of real-valued vector :math:`\\vec{v} \\in \\mathbb{R}^n`.</span>
+<span class="sd">    The vector type is an iterable object.</span>
+
+<span class="sd">    Supported Operations:</span>
+
+<span class="sd">    * element-wise vector addition</span>
+<span class="sd">    * element-wise vector subtraction</span>
+<span class="sd">    * element-wise vector multiplication</span>
+<span class="sd">    * element-wise vector division</span>
+<span class="sd">    * scalar-vector multiplication</span>
+<span class="sd">    * scalar-vector division</span>
+<span class="sd">    * vector-scalar exponentiation</span>
+
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        &gt;&gt;&gt; import vector as v</span>
+<span class="sd">        &gt;&gt;&gt; a = v.vector([1,2,3])</span>
+<span class="sd">        &gt;&gt;&gt; b = v.vector([4,5,6])</span>
+<span class="sd">        &gt;&gt;&gt; c = 5</span>
+<span class="sd">        &gt;&gt;&gt; a+b</span>
+<span class="sd">        [5, 7, 9]</span>
+<span class="sd">        &gt;&gt;&gt; a-b</span>
+<span class="sd">        [-3, -3, -3]</span>
+<span class="sd">        &gt;&gt;&gt; a*b</span>
+<span class="sd">        [4, 10, 18]</span>
+<span class="sd">        &gt;&gt;&gt; a/b</span>
+<span class="sd">        [0.25, 0.4, 0.5]</span>
+<span class="sd">        &gt;&gt;&gt; a*c</span>
+<span class="sd">        [5, 10, 15]</span>
+<span class="sd">        &gt;&gt;&gt; a/c</span>
+<span class="sd">        [0.2, 0.4, 0.6]</span>
+<span class="sd">        &gt;&gt;&gt; a**c</span>
+<span class="sd">        [1, 32, 243]</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">contents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Real</span><span class="p">]</span>
@@ -269,6 +302,7 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">contents</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
         <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s1">&#39;invalid index&#39;</span><span class="p">)</span></div>
 
+
 <div class="viewcode-block" id="norm"><a class="viewcode-back" href="../vector.html#vector.norm">[docs]</a><span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="n">vector</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    .. math::</span>
@@ -282,6 +316,14 @@
 
 <span class="sd">    Returns:</span>
 <span class="sd">        float: norm of a vector :math:`||\\vec{x}||`</span>
+
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        &gt;&gt;&gt; import vector as v</span>
+<span class="sd">        &gt;&gt;&gt; a = v.vector([2,1,-2])</span>
+<span class="sd">        &gt;&gt;&gt; v.norm(a)</span>
+<span class="sd">        3.0</span>
+<span class="sd">    </span>
 <span class="sd">    &quot;&quot;&quot;</span>    
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">vector</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;type expects a vector&#39;</span><span class="p">)</span>
@@ -299,12 +341,22 @@
 
 <span class="sd">    Returns:</span>
 <span class="sd">        vector: coordinates of normalized vector</span>
+
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        &gt;&gt;&gt; import vector as v</span>
+<span class="sd">        &gt;&gt;&gt; p = v.vector([2,1,-2])</span>
+<span class="sd">        &gt;&gt;&gt; q = v.vector([4,-5,6])</span>
+<span class="sd">        &gt;&gt;&gt; v.normalize(p,q)</span>
+<span class="sd">        [-0.19611613513818404, 0.5883484054145521, -0.7844645405527362]</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>    
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">vector</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">vector</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;p and q are expected to be a vector&#39;</span><span class="p">)</span>
     
     <span class="n">dist</span><span class="p">:</span><span class="n">vector</span> <span class="o">=</span> <span class="n">p</span><span class="o">-</span><span class="n">q</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">dist</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span></div>
+
 
 <div class="viewcode-block" id="dot"><a class="viewcode-back" href="../vector.html#vector.dot">[docs]</a><span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="n">p</span><span class="p">:</span><span class="n">vector</span><span class="p">,</span> <span class="n">q</span><span class="p">:</span><span class="n">vector</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;dot product operation of two vectors</span>
@@ -321,10 +373,20 @@
 
 <span class="sd">    Returns:</span>
 <span class="sd">        float: dot product of vector p and q </span>
+<span class="sd">    </span>
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        &gt;&gt;&gt; import vector as v</span>
+<span class="sd">        &gt;&gt;&gt; a = v.vector([1,2,3])</span>
+<span class="sd">        &gt;&gt;&gt; b = v.vector([4,-5,6])</span>
+<span class="sd">        &gt;&gt;&gt; v.dot(a,b)</span>
+<span class="sd">        12</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>    
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;lengths of vectors must be equal&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x0</span><span class="o">*</span><span class="n">x1</span> <span class="k">for</span> <span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="n">x1</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">))</span></div>
+
 
 <div class="viewcode-block" id="cross"><a class="viewcode-back" href="../vector.html#vector.cross">[docs]</a><span class="k">def</span> <span class="nf">cross</span><span class="p">(</span><span class="n">p</span><span class="p">:</span><span class="n">vector</span><span class="p">,</span> <span class="n">q</span><span class="p">:</span><span class="n">vector</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">vector</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -338,10 +400,19 @@
 <span class="sd">        q (vector): represents coordinates oF vector q</span>
 
 <span class="sd">    Raises:</span>
-<span class="sd">        NotImplementedError: [description]</span>
+<span class="sd">        NotImplementedError: when the dimensionality is not in :math:`\\mathbb{R}^3`</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        vector: [description]</span>
+<span class="sd">        vector: cross product of vectors in :math:`\\mathbb{R}^3`</span>
+
+<span class="sd">    ... code-block:: python</span>
+
+<span class="sd">        &gt;&gt;&gt; import vector as v</span>
+<span class="sd">        &gt;&gt;&gt; ab = v.vector([2,-1,6])</span>
+<span class="sd">        &gt;&gt;&gt; bc = v.vector([0,2,-4])</span>
+<span class="sd">        &gt;&gt;&gt; v.cross(ab,ac)</span>
+<span class="sd">        [-8,8,4]</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>    
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
@@ -355,8 +426,8 @@
 
 <div class="viewcode-block" id="get_angle"><a class="viewcode-back" href="../vector.html#vector.get_angle">[docs]</a><span class="k">def</span> <span class="nf">get_angle</span><span class="p">(</span><span class="n">p</span><span class="p">:</span><span class="n">vector</span><span class="p">,</span> <span class="n">q</span><span class="p">:</span><span class="n">vector</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span> 
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    ..math::</span>
-<span class="sd">        \\theta = \\acos \\left( \\frac{\\vec{p} \\cdot \\vec{q}}{|| \\vec{p} || || \\vec{q} ||}\\right)</span>
+<span class="sd">    .. math::</span>
+<span class="sd">        \\theta = \\arccos \\left( \\frac{\\vec{p} \\cdot \\vec{q}}{|| \\vec{p} || || \\vec{q} ||}\\right)</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        p (vector): represents coordinates of vector p</span>
@@ -364,8 +435,18 @@
 
 <span class="sd">    Returns:</span>
 <span class="sd">        float: angle between p and q</span>
+<span class="sd">    </span>
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        &gt;&gt;&gt; import vector as v</span>
+<span class="sd">        &gt;&gt;&gt; a = v.vector([3,-2,3])</span>
+<span class="sd">        &gt;&gt;&gt; b = v.vector([1,-3,-3])</span>
+<span class="sd">        &gt;&gt;&gt; v.get_angle(a,b)</span>
+<span class="sd">        1.5707963267948966 # which is equal to π/2</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>    
     <span class="k">return</span> <span class="n">acos</span><span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">norm</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">*</span><span class="n">norm</span><span class="p">(</span><span class="n">q</span><span class="p">)))</span></div>
+
 
 <div class="viewcode-block" id="get_projection"><a class="viewcode-back" href="../vector.html#vector.get_projection">[docs]</a><span class="k">def</span> <span class="nf">get_projection</span><span class="p">(</span><span class="n">p</span><span class="p">:</span><span class="n">vector</span><span class="p">,</span> <span class="n">q</span><span class="p">:</span><span class="n">vector</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">vector</span><span class="p">:</span> 
     <span class="sd">&quot;&quot;&quot;</span>
@@ -378,8 +459,18 @@
 
 <span class="sd">    Returns:</span>
 <span class="sd">        vector: coordinates of the projection of p to q</span>
+<span class="sd">    </span>
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        &gt;&gt;&gt; import vector as v</span>
+<span class="sd">        &gt;&gt;&gt; a = v.vector([2,3,5])</span>
+<span class="sd">        &gt;&gt;&gt; b = v.vector([2,-1,-2])</span>
+<span class="sd">        &gt;&gt;&gt; v.get_projection(b,a)</span>
+<span class="sd">        [-2.0, 1.0, 2.0]</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>    
     <span class="k">return</span> <span class="n">p</span> <span class="o">*</span> <span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span></div>
+
 
 <div class="viewcode-block" id="dist"><a class="viewcode-back" href="../vector.html#vector.dist">[docs]</a><span class="k">def</span> <span class="nf">dist</span><span class="p">(</span><span class="n">p</span><span class="p">:</span><span class="n">vector</span><span class="p">,</span> <span class="n">q</span><span class="p">:</span><span class="n">vector</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">vector</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -392,12 +483,76 @@
 
 <span class="sd">    Returns:</span>
 <span class="sd">        vector: returns the distance of p to q</span>
+
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        &gt;&gt;&gt; import vector as v</span>
+<span class="sd">        &gt;&gt;&gt; x = v.vector([1,2,3])</span>
+<span class="sd">        &gt;&gt;&gt; y = v.vector([4,5,6])</span>
+<span class="sd">        &gt;&gt;&gt; v.dist(x,y)</span>
+<span class="sd">        [-3,-3,-3]</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>    
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">vector</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">vector</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;p and q are expected to be of type vector&#39;</span><span class="p">)</span>    
     <span class="k">return</span> <span class="n">p</span> <span class="o">-</span> <span class="n">q</span></div>
 
-<div class="viewcode-block" id="vectorize"><a class="viewcode-back" href="../vector.html#vector.vectorize">[docs]</a><span class="k">def</span> <span class="nf">vectorize</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">vector</span><span class="p">:</span> <span class="o">...</span></div>
+
+<div class="viewcode-block" id="vectorize"><a class="viewcode-back" href="../vector.html#vector.vectorize">[docs]</a><span class="k">def</span> <span class="nf">vectorize</span><span class="p">(</span><span class="n">func</span><span class="p">:</span><span class="n">Callable</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="n">vector</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">vector</span><span class="p">:</span> 
+    <span class="sd">&quot;&quot;&quot;maps the values of a list of vector into a mathematical function</span>
+
+<span class="sd">    .. math::</span>
+<span class="sd">        f: \\langle \\vec{x_1}, ..., \\vec{x_n} \\rangle \\mapsto \\langle y_1, ... y_n \\rangle</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        func (Callable): a mathematical function that returns a value</span>
+<span class="sd">        args (List[vector]): list of vectors that are mapped as arguments</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        RuntimeError: when the function expects a number of arguments not equal to the number of vectors</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        vector: evaluation of :math:`f(\\vec{x_1}, ..., \\vec{x_n})`</span>
+
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        &gt;&gt;&gt; import vector as v</span>
+<span class="sd">        &gt;&gt;&gt; x = v.vector([1,2,3])</span>
+<span class="sd">        &gt;&gt;&gt; y = v.vector([4,5,6])</span>
+<span class="sd">        &gt;&gt;&gt; z = v.vector([7,8,9])</span>
+<span class="sd">        &gt;&gt;&gt; v.vectorize(lambda  x,y,z: x+y+z, [x,y,z])</span>
+<span class="sd">        [12,15,18]</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>    
+    <span class="k">if</span> <span class="n">func</span><span class="o">.</span><span class="vm">__code__</span><span class="o">.</span><span class="n">co_argcount</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;invalid expression: func is expected to take the same number&#39;</span>
+                            <span class="s1">&#39; of arguments as the length of args&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">vector</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)))</span></div>
+
+
+<div class="viewcode-block" id="parameterize"><a class="viewcode-back" href="../vector.html#vector.parameterize">[docs]</a><span class="k">def</span> <span class="nf">parameterize</span><span class="p">(</span><span class="n">functions</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="n">Callable</span><span class="p">],</span> <span class="n">arg</span><span class="p">:</span><span class="n">Real</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">vector</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;parameterized vector which maps a single-valued argument into a list of functions</span>
+
+<span class="sd">    .. math::</span>
+<span class="sd">        \\vec{f}(x) = \\langle f_1(x), ... f_n(x) \\rangle</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        functions (List[Callable]): represents a list of mathematical functions that return a value</span>
+<span class="sd">        arg (Real): represents the single-valued argument</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        vector: coordinates of a vector after evaluating the list of functions :math:`\\vec{f}(x)`.</span>
+<span class="sd">    </span>
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        &gt;&gt;&gt; import vector as v</span>
+<span class="sd">        &gt;&gt;&gt; from math import sin, cos, pi</span>
+<span class="sd">        &gt;&gt;&gt; functions = [lambda x: cos(x), lambda x: sin(x*pi), lambda x: x*pi]</span>
+<span class="sd">        &gt;&gt;&gt; v.parameterize(functions, pi)</span>
+<span class="sd">        [-1.0, -0.4303012170000917, 9.869604401089358]</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>    
+    <span class="k">return</span> <span class="n">vector</span><span class="p">([</span><span class="n">f</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">functions</span><span class="p">])</span></div>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="c1"># v0 = vector([1,2,4,5])</span>
