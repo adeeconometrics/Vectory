@@ -1,0 +1,6 @@
+README.md
+setup.py
+vectory.egg-info/PKG-INFO
+vectory.egg-info/SOURCES.txt
+vectory.egg-info/dependency_links.txt
+vectory.egg-info/top_level.txt

@@ -284,7 +284,7 @@ def cross(p:vector, q:vector) -> vector:
     Returns:
         vector: cross product of vectors in :math:`\\mathbb{R}^3`
 
-    ... code-block:: python
+    .. code-block:: python
 
         >>> import vector as v
         >>> ab = v.vector([2,-1,6])
@@ -433,6 +433,34 @@ def parameterize(functions:List[Callable], arg:Real) -> vector:
     """    
     return vector([f(arg) for f in functions])
 
+def lp_norm(v:Union[vector, list], p:float) -> float:
+    """Computes the generalized norm of a vector
+
+    .. math::
+        ||\\vec{x}||_p = \\left( \\sum_i |x_i|^p \\right)^{\\frac{1}{p}}
+        
+    Args:
+        v (Union[vector, list]): represents vector coordinates
+        p (float): represents the degree of lp-norm
+
+    Returns:
+        float: generalized norm of a vector
+    
+    .. code-block:: python
+
+        >>> import vector as v
+        >>> v0 = vector([1,2,3,4,-5])
+        >>> print(lp_norm(v0, float('inf'))) # l-infinity norm
+        5
+
+    """
+    if p == 0.0:
+        return len(list(filter(lambda x: x!=0, v)))
+    if p == float('inf'):
+        return max(abs(x) for x in v)
+    return pow(sum(x**p for x in v),1/p)
+
+
 if __name__ == '__main__':
     # v0 = vector([1,2,4,5])
     # v1 = vector([1,2,3,5])
@@ -450,7 +478,9 @@ if __name__ == '__main__':
     # print(f'eq: {v1 == vector([1,2,3,5])}')
     # print(f'neq: {v1 != vector([1,3,4,5])}')
 
-    from fractions import Fraction as F
-    p = vector([F(3),F(-1),F(1)])
-    q = vector([F(0),F(5),F(-1)])
-    print(normalize(p,q))
+    # from fractions import Fraction as F
+    # p = vector([F(3),F(-1),F(1)])
+    # q = vector([F(0),F(5),F(-1)])
+    # print(normalize(p,q))
+    v0 = vector([1,2,3,4,-5])
+    print(lp_norm(v0, float('inf')))

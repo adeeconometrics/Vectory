@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: vectory
+Version: 0.0.1
+Summary: Dependency-Free Vector Algebra Library in Python.
+Home-page: https://github.com/adeeconometrics/Vectory
+Author: ddamiana (Dave Amiana)
+Author-email: <amiana.dave@gmail.com>
+License: UNKNOWN
+Description: # Vectory
+        
+        Vectory is a dependency-free vectory algebra library in Python. Vectory supports elementary operations involoving vectors. Motivated to solve the problems of my girlfriend, some functions are specialized for ℝ³`. More importantly, the core data structure is stored in vector class which can be wrapped as a numpy array via np.array(vector) thereby extending its reach for more complicated expressions. The intent of Vectory is to serve the basic needs for solving small instances of vector algebra problems without incurring unecessary penalties of bloat dependencies.
+        
+        The documentation is available at: https://adeeconometrics.github.io/Vectory/
+        
+Keywords: python,vector,algebra,vector space,mathematics
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
